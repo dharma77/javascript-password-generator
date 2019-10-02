@@ -5,7 +5,8 @@ Hi, this project is based on the [Project Nayuki - Random password generator (Ja
 What I've done with the original Nayuki password generator is: 
 * add better graphic layout and made it responsive :iphone:
 * separate out the logic and stylesheets from HTML :twisted_rightwards_arrows:
-* added strong password checker :muscle: --> [`zxcvbn`] (https://github.com/dropbox/zxcvbn)
+* added strong password checker :muscle: --> [`zxcvbn`](https://github.com/dropbox/zxcvbn)
+* added tooltip over "generate" and "copy" button :question: --> [`tooltipster`](https://github.com/iamceege/tooltipster)
 * more to come :fire:
 
 ## Usage
