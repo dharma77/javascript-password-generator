@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
+* {
+    box-sizing: border-box;
+}
+
+.lp-pg-generated-password__strength-wrapper {
+    position: absolute;
+    max-width: auto;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 11px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-transition: background-color .63s;
+    transition: background-color .63s
+}
+
+.lp-pg-generated-password__strength {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 0;
+    height: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #5ed98a;
+    -webkit-transition: width .63s;
+    transition: width .63s
+}
+
+.lp-pg-generated-password {
+    height: 11px;
+    display: flex;
+    position: relative;
+    max-width: auto;
+}

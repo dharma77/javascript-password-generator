@@ -1,0 +1,446 @@
+/*$xs-max: 479px;
+        $sm-min: $xs-max+1;
+        $sm-max: 767px;
+        $md-min: $sm-max+1;
+        $md-max: 991px;
+        $lg-min: $md-max+1;
+        $lg-max: 1399px;
+        $xl-min: $lg-max+1;*/
+
+html {
+    background-color: #506175;
+    /*f9fbfd*/
+    font-family: "gibson-regular", Arial, sans-serif;
+    font-size: 18px;
+    /*font-size: 130%;*/
+    color: #3c4a55;
+}
+
+
+/* Gestione body da mobile e schermi grandi*/
+
+@media (max-width: 479px) {
+    body {
+        max-width: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    #copy-button {
+        display: none;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    body {
+        max-width: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    #copy-button {
+        /*display: none;*/
+    }
+    .h1-generate {
+        /*font-size: 4em;*/
+    }
+    form .section {
+        padding: 1em 1.5em;
+        background-color: #Fff;
+        border: 0.05em solid #E0E0E0;
+        border-radius: 0.5em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        font-size: 2.7em;
+    }
+    .lp-pg-generated-password__icon {
+        /*left: 50%;*/
+        display: inline;
+        width: 10em !important;
+        height: 10em !important;
+        border: 0;
+        position: relative;
+        background-color: #fff;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    .lp-pg-generated-password__icon-generate {
+        background-size: contain;
+    }
+    .lp-pg-generated-password__icon-copy {
+        background-image: url(/password-generator/images/img-icon-copy-@3x.png);
+        background-size: contain;
+    }
+    .bottoni {
+        text-align: center;
+        margin: 2%;
+    }
+    .pwd-p {
+        max-width: unset;
+        line-height: 1.35;
+        word-break: break-all;
+        /*font-size: 2em!important;*/
+        margin: 2% !important;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    form #password {
+        margin-left: 0px !important;
+        margin-top: 0.2em;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+        background-color: #E6E6E6;
+        border-radius: 0.2em;
+        font-family: "Consolas", monospace;
+        /*font-size: 2.7em!important;*/
+        line-height: 1.5em;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        max-width: auto;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    #copy-button {
+        /*display: none;*/
+    }
+    .h1-generate {
+        /*font-size: 4em;*/
+    }
+    form .section {
+        padding: 1em 1.5em;
+        background-color: #Fff;
+        border: 0.05em solid #E0E0E0;
+        border-radius: 0.5em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        font-size: 2.7em;
+    }
+    .lp-pg-generated-password__icon {
+        /*left: 50%;*/
+        display: inline;
+        width: 10em !important;
+        height: 10em !important;
+        border: 0;
+        position: relative;
+        background-color: #fff;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    .lp-pg-generated-password__icon-generate {
+        background-size: contain;
+    }
+    .lp-pg-generated-password__icon-copy {
+        background-image: url(/password-generator/images/img-icon-copy-@3x.png);
+        background-size: contain;
+    }
+    .bottoni {
+        text-align: center;
+        margin: 2%;
+    }
+    .pwd-p {
+        max-width: unset;
+        line-height: 1.35;
+        word-break: break-all;
+        /*font-size: 2em!important;*/
+        margin: 2% !important;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    form #password {
+        margin-left: 0px !important;
+        margin-top: 0.2em;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+        background-color: #E6E6E6;
+        border-radius: 0.2em;
+        font-family: "Consolas", monospace;
+        /*font-size: 2.7em!important;*/
+        line-height: 1.5em;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* Desktop(s)*/
+
+@media (min-width: 992px) and (max-width: 1399px) {
+    body {
+        max-width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .h1-generate {
+        font-size: 2em;
+    }
+    .bottoni {
+        text-align: center;
+        margin: 2%;
+    }
+    .pwd-p {
+        max-width: unset;
+        line-height: 1.35;
+        word-break: break-all;
+        font-size: 1.3em!important;
+        text-align: center;
+    }
+    form #password {
+        text-align: center;
+        /* margin-left: 0px !important; */
+        margin: 2%;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+        background-color: #E6E6E6;
+        border-radius: 0.2em;
+        font-family: "Consolas", monospace;
+        font-size: 1.7em!important;
+        line-height: 1.1em;
+        display: inline-flex;
+    }
+    .lp-pg-generated-password__icon {
+        /*left: 50%;*/
+        display: inline;
+        width: 5em !important;
+        height: 5em !important;
+        border: 0;
+        position: relative;
+        background-color: #fff;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    .lp-pg-generated-password__icon-generate {
+        background-size: contain;
+    }
+    .lp-pg-generated-password__icon-copy {
+        background-image: url(/password-generator/images/img-icon-copy-@3x.png);
+        background-size: contain;
+    }
+    form .section {
+        padding: 1em 1.5em;
+        background-color: #Fff;
+        border: 0.05em solid #E0E0E0;
+        border-radius: 0.5em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media (min-width: 1400px) {
+    body {
+        max-width: 40em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .h1-generate {
+        font-size: 2em;
+    }
+    .bottoni {
+        text-align: center;
+        margin: 2%;
+    }
+    .pwd-p {
+        max-width: unset;
+        line-height: 1.35;
+        word-break: break-all;
+        font-size: 1.3em!important;
+        text-align: center;
+    }
+    form #password {
+        text-align: center;
+        /* margin-left: 0px !important; */
+        margin: 2%;
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+        background-color: #E6E6E6;
+        border-radius: 0.2em;
+        font-family: "Consolas", monospace;
+        font-size: 1.7em!important;
+        line-height: 1.1em;
+        display: inline-flex;
+    }
+    .lp-pg-generated-password__icon {
+        /*left: 50%;*/
+        display: inline;
+        width: 5em !important;
+        height: 5em !important;
+        border: 0;
+        position: relative;
+        background-color: #fff;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+    .lp-pg-generated-password__icon-generate {
+        background-size: contain;
+    }
+    .lp-pg-generated-password__icon-copy {
+        background-image: url(/password-generator/images/img-icon-copy-@3x.png);
+        background-size: contain;
+    }
+    form .section {
+        padding: 1em 1.5em;
+        background-color: #Fff;
+        border: 0.05em solid #E0E0E0;
+        border-radius: 0.5em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 160%;
+}
+
+form .section {
+    padding: 1em 1.5em;
+    background-color: #Fff;
+    border: 0.05em solid #E0E0E0;
+    border-radius: 0.5em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+form table {
+    border-collapse: collapse;
+}
+
+form input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+form #charset td {
+    padding: 0em;
+}
+
+form #charset small {
+    font-size: 70%;
+    color: #A0A0A0;
+}
+
+form #type td {
+    padding: 0.2em 0em;
+}
+
+form #type input[type=number] {
+    text-align: right;
+}
+
+form input[type=submit],
+form input[type=button] {
+    padding: 0.2em 0.6em;
+}
+
+form #password {
+    margin-left: 0.3em;
+    padding: 0.1em 0.3em;
+    background-color: #E6E6E6;
+    border-radius: 0.2em;
+    font-family: "Consolas", monospace;
+    font-size: 1.5em;
+}
+
+p.lowlight {
+    color: #A0A0A0;
+}
+
+hr {
+    border: none;
+    border-top: 0.05em solid #B0B0B0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.lp-pg-generated-password__icon-generate {
+    background-image: url(/password-generator/images/icon-generate-new.svg)
+}
+
+
+/* Tooltip*/
+
+.lp-pg-tooltip-content {
+    display: none;
+    position: absolute;
+    top: -8px;
+    left: 125%;
+    z-index: 10;
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    border: solid 1px #d6dbdb;
+    border-radius: 5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.25);
+    margin: 0;
+    color: #333f48;
+    font-size: .77778rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+    font-family: 'gibson-regular', Arial, sans-serif
+}
+
+.lp-pg-tooltip-content.active {
+    display: block
+}
+
+
+/* modal popup */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    border-radius: 5px;
+    background-color: #5ed98a;
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 0.5%;
+    /*border: 1px solid #888;*/
+    width: 70%;
+    /* Could be more or less, depending on screen size */
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

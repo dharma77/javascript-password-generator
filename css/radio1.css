@@ -1,0 +1,96 @@
+/* Base for label styling */
+
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:not(:checked)+label,
+[type="radio"]:checked+label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+}
+
+
+/* radio aspect */
+
+[type="radio"]:not(:checked)+label:before,
+[type="radio"]:checked+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.1em;
+    height: 1.1em;
+    border: 2px solid #ccc;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+
+/* checked mark aspect */
+
+[type="radio"]:not(:checked)+label:after,
+[type="radio"]:checked+label:after {
+    content: '\2715\0020';
+    /* '\26AC\0020'; */
+    position: absolute;
+    /*top: .0em;
+    left: .275em;*/
+    top: .115em;
+    left: .155em;
+    font-size: 1.3em;
+    line-height: 0.8;
+    color: red;
+    transition: all .2s;
+    font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', Arial;
+}
+
+
+/* checked mark aspect changes */
+
+[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+[type="radio"]:checked+label:after {
+    opacity: 1;
+    transform: scale(0.8);
+}
+
+
+/* disabled radio */
+
+[type="radio"]:disabled:not(:checked)+label:before,
+[type="radio"]:disabled:checked+label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+
+[type="radio"]:disabled:checked+label:after {
+    color: #999;
+}
+
+[type="radio"]:disabled+label {
+    color: #aaa;
+}
+
+
+/* accessibility */
+
+[type="radio"]:checked:focus+label:before,
+[type="radio"]:not(:checked):focus+label:before {
+    border: 2px dotted blue;
+}
+
+
+/* hover style just for information */
+
+label:hover:before {
+    border: 2px solid #4778d9!important;
+}

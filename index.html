@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46153799-8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46153799-8');
+    </script>
+
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://lp-cdn.lastpass.com/lporcamedia/2019-08-19--150547/dist/fonts/gibson-regular-webfont.woff">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://lp-cdn.lastpass.com/lporcamedia/2019-08-19--150547/dist/fonts/gibson-light-webfont.woff">
+    <!--==== CSS ====-->
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/tooltipster.bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/strength.css" />
+    <link rel="stylesheet" type="text/css" href="./css/checkbox1.css" />
+    <link rel="stylesheet" type="text/css" href="./css/radio1.css" />
+    <!--==== Javascript ====-->
+    <link rel="stylesheet" type="text/css" href="./dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="./dist/js/tooltipster.bundle.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+                theme: 'tooltipster-light',
+                side: 'bottom'
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+
+
+
+    <meta charset="UTF-8">
+
+    <title>Bez | Random password generator </title>
+    <meta name="description" content="Strong password generator based on javascript code by Nayuki">
+    <!--==== Style code ====-->
+
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+
+<!--==== HTML body code ====-->
+
+<body>
+
+    <form id="generapass" name="generapass" action="#" method="get" onsubmit="doGenerate(event);">
+
+        <div id="charset" class="section">
+            <h1>Random password generator</h1>
+            <p style="margin:0.3em 0em; font-size: 110%">Character set:</p>
+
+            <p>
+                <input type="checkbox" id="charset-0" checked>
+                <label for="charset-0"> Numbers <small>(0123456789)</small></label>
+            </p>
+            <p>
+                <input type="checkbox" id="charset-1" checked>
+                <label for="charset-1"> Lowercase <small>(abcdefghijklmnopqrstuvwxyz)</small></label>
+            </p>
+            <p>
+                <input type="checkbox" id="charset-2" checked>
+                <label for="charset-2"> Uppercase <small>(ABCDEFGHIJKLMNOPQRSTUVWXYZ)</small></label>
+            </p>
+            <p>
+                <input type="checkbox" id="charset-3" checked>
+                <label for="charset-3"> ASCII symbols <small>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</small></label>
+            </p>
+            <p>
+                <input type="checkbox" id="charset-4">
+                <label for="charset-4"> Space <small>( )</small></label>
+            </p>
+
+            <p>
+                <input type="checkbox" id="custom" />
+                <label for="custom">Custom:</label><input type="text" id="customchars" value="" size="15" style="width:10em; font-size:80%" oninput="document.getElementById('custom').checked=true;">
+            </p>
+
+
+
+        </div>
+        <div class="section" style="margin:0.8em 0em">
+            <table id="type">
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="type" id="by-length" checked="checked"> <label for="by-length">Length:&#xA0;</label></td>
+                        <td><input type="number" min="0" value="12" step="1" id="length" style="width:4em" oninput="document.getElementById('by-length').checked=true;"> characters</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="type" id="by-entropy"> <label for="by-entropy">Entropy:</label>&#xA0;</td>
+                        <td><input type="number" min="0" value="128" step="any" id="entropy" style="width:4em" oninput="document.getElementById('by-entropy').checked=true;"> bits</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="section">
+            <h1 class="h1-generate">
+                Generate
+            </h1>
+            <div class="pwd-p">
+                <div class="bottoni">
+                    <button type="submit" value="Generate" class="lp-pg-generated-password__icon lp-pg-generated-password__icon-generate tooltip" id="box" title="Generate">
+                    </button>
+                    <button type="button" value="Copy" id="copy-button" onclick="doCopy();" disabled="disabled" class="lp-pg-generated-password__icon lp-pg-generated-password__icon-copy tooltip" title="Copy">
+                    </button>
+                </div>
+                <span id="password"></span>
+            </div>
+
+            <div class="lp-pg-generated-password">
+                <div id="barra_bg" class="lp-pg-generated-password__strength-wrapper">
+                    <div id="barra" class="lp-pg-generated-password__strength" style="width:0%;"></div>
+                </div>
+            </div>
+            <p id="statistics" class="lowlight" style="font-size:85%">&#xA0;</p>
+            <p class="lowlight" style="max-width:unset; font-size:85%">Entropy sources:<br> ✓ <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"><code>Math.random()</code></a> (low security)<br>
+                <span id="crypto-getrandomvalues-entropy"></span> <a href="https://developer.mozilla.org/en-US/docs/Web/API/RandomSource/getRandomValues"><code>crypto.getRandomValues()</code></a> (high security)</p>
+            <hr>
+            <p class="lowlight" style="font-size:80%">© 2019 <a href="https://github.com/dharma77/javascript-password-generator">Enrico Bez</a> - <a href="https://www.nayuki.io/page/random-password-generator-javascript">Credits (Nayuki)</a></p>
+
+        </div>
+    </form>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Copied</p>
+        </div>
+
+    </div>
+
+
+    <!--==== JavaScript code ====-->
+    <script>
+        // Code that submit the form on page load (the first time)
+        $(document).ready(function() {
+            if ($("#password").val() == "") {
+                $("#generapass").submit();
+            }
+        });
+    </script>
+
+    <!-- For the following code is edited from the Project Nayuki - https://www.nayuki.io/page/random-password-generator-javascript -->
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
